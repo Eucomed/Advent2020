@@ -6,8 +6,8 @@ cookies = {'session': f.read()}
 r = requests.get('https://adventofcode.com/2020/day/6/input', cookies=cookies)
 
 # *** SOLUTION 1 - anyone answered YES ***
-
 # Groups represents groups of combined answers (a-z) delimited by empty row, count letters without their duplicity
+
 groups = r.text[:-1].split('\n\n')  # [:-1] = handling, last character is '\n'
 result1 = 0
 
@@ -19,7 +19,6 @@ for group in groups:
 print('Counter is thinking ... Bingo! Say yes to see the counter of yes! YES!: ' + str(result1))
 
 # *** SOLUTION 2 - everyone answered YES ***
-
 # Count letters only when appears more time in each row
 # Example: (4 x 'a' in four rows = 1, 1 x 'a' in 1 row = 1,'a''b''c' in 3 rows = 0 )
 
